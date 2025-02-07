@@ -4,6 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const mongoose = require('mongoose');
+mongoose.connect('mongodb+srv://cluster0.ganph.mongodb.net/').then(() => console.log('Connected!'));
+
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var estudiantes = require('./routes/estudiantes');
@@ -25,6 +30,16 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', estudiantes);
 app.use('/gremio', gremio);
+
+/*const Schema = mongoose.Schema;
+const ObjectId = Schema.ObjectId;
+
+const BlogPost = new Schema({
+  author: ObjectId,
+  title: String,
+  body: String,
+  date: Date
+});*/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
