@@ -3,12 +3,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-import Blog from './Schema/Blog';
+/*import Blog from './Schema/Blog';
 
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://cluster0.ganph.mongodb.net/').then(() => console.log('Connected!'));
+*/
 
-
+require('dotenv').config();
+console.log(process.env.NEW_API);
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -42,7 +44,7 @@ const BlogPost = new Schema({
   date: Date
 });*/
 
-const article = new Blog({
+/*const article = new Blog({
 
   title: 'Awesome Post!',
   slug: 'awesome-post',
@@ -57,6 +59,7 @@ await article.save();
 
 const fArticle = await Blog.obtenerGremio(1, "Gremio de Hechiceros").exec();
 console.log(fArticle);
+*/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
