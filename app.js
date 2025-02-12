@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/api', estudiantes);
+app.use('/estudiantes', estudiantes);
 app.use('/gremio', gremio);
 
 /*const Schema = mongoose.Schema;
